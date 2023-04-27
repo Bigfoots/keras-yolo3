@@ -43,7 +43,7 @@ if __name__ == '__main__':
         '--gpu_num', type=int,
         help='Number of GPU to use, default ' + str(YOLO.get_defaults("gpu_num"))
     )
-
+    ## 图片检测时将default=False设置为True
     parser.add_argument(
         '--image', default=False, action="store_true",
         help='Image detection mode, will ignore all positional arguments'
@@ -51,6 +51,9 @@ if __name__ == '__main__':
     '''
     Command line positional arguments -- for video detection mode
     '''
+    ##将图片检测关掉，把上面设置为default=True
+    ## 摄像头检测时将default设置为0
+    ## 视频检测时将default设置为视频路径eg:"./images/demo1.mp4"
     parser.add_argument(
         "--input", nargs='?', type=str,required=False,default='./path2your_video',
         help = "Video input path"
